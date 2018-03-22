@@ -1,0 +1,40 @@
+.TH note2tab 1 "January 1, 2013" "version 0.1" "note2tab"
+.SH NAME
+.B note2tab
+\- Translate notes into guitar tablature notation
+.SH SYNOPSIS
+\fBnote2tab\fP [\fB-l\fP][\fB-k\fP \fIkey\fP][\fB-s\fP \fIshift\fP]
+[\fB-c\fP \fIclef\fP][\fI#\fP|\fIb\fP|\fI%\fP]\fIposition\fP ...
+.SH DESCRIPTION
+.B note2tab
+translates single notes and chords into guitar tablature notation.
+A note is given by an optional accidental (\fI#\fP, \fIb\fP, or the
+natural sign \fI%\fP) and a vertical numeric \fIposition\fP on the staff.
+\fIPosition\fP 1 is the undermost line, \fIposition\fP 2 is the
+space above the undermost line, and so forth.
+\fIPosition\fP 0 is the space below the undermost line, \fIposition\fP -1 is
+the first ledger line below \fIposition\fP 0, and so forth.
+A \fIchord\fP is given by two or more different notes
+enclosed in (). Example: (-1 b1 b3)
+.SH OPTIONS
+.TP
+\fB-l\fP 
+Generate output in one line-format.
+.TP
+\fB-k\fP \fIkey\fP
+.br
+Defines the \fIkey\fP. The \fIkey\fP is given by a quoted string consisting of
+\'#'s or 'b's, each followed by a \fIposition\fP on the staff. Example: "#6 #9"
+(b minor).
+.TP
+\fB-s\fP \fIshift\fP
+.br
+Shift each note by \fIshift\fP halftones.
+.TP
+\fB-c\fP \fIclef\fP
+.br
+Sets the \fIclef\fP. The \fIclef\fP can be g or f. By default
+\fIclef\fP is g.
+.SH AUTHOR
+Marcel Kaiser <mk@nic-nac-project.org>
+
